@@ -1,2 +1,2 @@
-from gym_microgrid.envs.pvmicrogrid_env import PV_MicroGrid
+from gym_microgrid.envs.microgrid_pv_env import MicrogridPVEnv
 
