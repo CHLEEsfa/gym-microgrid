@@ -1,5 +1,8 @@
 
 # coding: utf-8
+import gym
+from gym import error, spaces, utils
+from gym.utils import seeding
 
 import math
 import gym
