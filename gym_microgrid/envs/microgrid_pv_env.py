@@ -109,7 +109,7 @@ class MicrogridPVEnv(gym.Env, GDP.GridParameter):
                 amount = self.HeatPump  
                 
             if  surplus_t >= 0 and shortage_t == 0:
-                print(self.t, ' amount: ', amount)
+                #print(self.t, ' amount: ', amount)
                 if surplus_t >= amount:
                     surplus_t -= amount
                     self.TankLevel = self.TankLevel * self.TANK_LOSS_PER_T + amount
