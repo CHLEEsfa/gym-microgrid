@@ -28,7 +28,9 @@ class MicrogridPVEnv(gym.Env, GDP.GridParameter):
         self.Data = pd.read_excel(self.DATA_PATH)
 
         self.min_action = -1
-        self.max_action = self.HP_CAPACITY
+        self.max_action = 1
+        print('set up Action Space: min, max = ',self.min_action,self.max_action)
+
         
         self.min_tank_level = 0.0
         self.max_tank_level = self.TANK_CAPACITY
@@ -70,6 +72,8 @@ class MicrogridPVEnv(gym.Env, GDP.GridParameter):
     
     
     def step(self, action):
+        
+        action = action * self.HP_CAPACITY
 
         surplus_t  = self.Data.loc[self.t, 'PVSurplus_h']
         shortage_t = self.Data.loc[self.t, 'Shortage_h']
